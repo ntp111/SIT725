@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="https://unpkg.com/tabulator-tables@6.2.5/dist/css/tabulator.min.css" rel="stylesheet">
+ <script type="text/javascript" src="https://unpkg.com/tabulator-tables@6.2.5/dist/js/tabulator.min.js"></script>
+</head>
+
+<style>
+	.buttons {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 10px;
+	}
+</style>
+
+<body>
+
+	<nav>
+		<div class="nav-wrapper">
+			<a href="#" class="brand-logo">Student Management</a>
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li><a href="/about.html">About</a></li>
+				<li><a href="/contact.html">Contact</a></li>
+				<li><a href="/login.html">Log in</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div style="width:100%;">
+		<h2 style="text-align:center">Student List</h2>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col s3"></div>
+		<div class="col s6">
+            <div id="example-table"></div>
+		</div>
+		<div class="col s3"></div>
+
+	</div>
+	<br>
+	<div class="row">
+		<div class="col s3"></div>
+		<div class="col s6">
+			<center>
+				<div class="col s12 center-align">
+					<a class="waves-effect waves-light btn click-me-button modal-trigger" id="clickMeButton" data-target="modal1"><i class="material-icons left">auto_fix_high</i>Add new student</a>
+				</div>
+
+			</center>
+			<div id="history"></div>
+
+		</div>
+		<div class="col s3"></div>
+	</div>
+
+
+	<div id="modal1" class="modal modal-fixed-footer">
+		<div class="row modal-content">
+			<form class="col s12">
+				<div class="row">
+					<div class="input-field col s6">
+						<input id="first_name" type="text" class="validate">
+						<label for="first_name">First Name</label>
+					</div>
+					<div class="input-field col s6">
+						<input id="last_name" type="text" class="validate">
+						<label for="last_name">Last Name</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="address" type="text" class="validate">
+						<label for="address">Address</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="dob" type="date" class="validate">
+						<label for="dob">Date of Birth</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="gpa" type="number" class="validate">
+						<label for="gpa">GPA</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="hobbyInput" type="text" class="validate">
+						<label for="hobbyInput">Hobby</label>
+						<a class="waves-effect waves-light btn" id="addHobbyButton"><i class="material-icons left">add</i>Add Hobby</a>
+					</div>
+				</div>
+				<div class="row">
+					<div id="hobbyTable"></div><br>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 center-align">
+						<a class="waves-effect waves-light btn" id="formSubmit">submit</a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div id="studentModal" class="modal">
+		<div class="modal-content">
+			<h4>Student Information</h4>
+			<div id="studentInfo"></div>
+			<h5>Hobbies</h5>
+			<div id="studentHobbyTable"></div>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+		</div>
+	</div>
+
+	<!--JavaScript at end of body for optimized loading-->
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+</body>
+
+</html>
